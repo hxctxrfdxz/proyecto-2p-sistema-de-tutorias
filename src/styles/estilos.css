@@ -1,0 +1,839 @@
+/* estilos.css */
+/* Variables de colores - Manteniendo la paleta original */
+:root {
+  --primario: #C62828;
+  --primario-oscuro: #B71C1C;
+  --acento: #f9bc60;
+  --fondo: #f4f6f9;
+  --atenuado: #666;
+  --blanco: #fff;
+  --sombra: rgba(0,0,0,0.12);
+
+  /* Ajustes de escala (solo tamaños, sin cambiar diseño) */
+  --fs-base: 15px;
+  --fs-small: 13px;
+  --radius: 10px;
+  --pad-card: 20px;
+}
+
+* { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+}
+
+html {
+  font-size: var(--fs-base);
+}
+
+body {
+  font-family: 'Inter', 'Segoe UI', Roboto, Arial, sans-serif;
+  background: var(--fondo);
+  color: #222;
+  line-height: 1.55;
+  margin: 0;
+  padding-top: 64px; /* un poco menor */
+}
+
+/* === BARRA DE NAVEGACIÓN === */
+.barra-navegacion {
+  background-color: #424242;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+  padding: 0.4rem 1.1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 64px; /* menor */
+}
+
+.marca-barra-navegacion {
+  display: flex;
+  align-items: center;
+}
+
+.logo-barra-navegacion {
+  height: 36px;
+  width: auto;
+}
+
+.menu-barra-navegacion {
+  list-style: none;
+  display: flex;
+  gap: 0.9rem;
+  margin: 0;
+  padding: 0;
+  flex: 1;
+  justify-content: center;
+}
+
+.final-barra-navegacion {
+  display: flex;
+  align-items: center;
+}
+
+.boton-salir {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 13px;
+  padding: 7px 12px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  transition: all 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.08);
+}
+
+.boton-salir:hover {
+  background-color: #EC3237;
+  border-color: #EC3237;
+}
+
+.menu-barra-navegacion a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 0.3px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.menu-barra-navegacion a:hover {
+  background-color: #EC3237;
+}
+
+.menu-barra-navegacion a.activo {
+  background-color: #EC3237;
+}
+
+/* === CONTENEDORES Y TARJETAS === */
+main {
+  padding: 22px 18px;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: calc(100vh - 100px);
+}
+
+.contenedor {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.tarjeta {
+  background: var(--blanco);
+  border-radius: var(--radius);
+  padding: var(--pad-card);
+  box-shadow: 0 4px 10px var(--sombra);
+  margin-bottom: 18px;
+}
+
+/* === BOTONES === */
+.boton {
+  padding: 9px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  background-color: var(--primario);
+  color: var(--blanco);
+  transition: background-color 0.3s;
+  font-size: 14px;
+}
+
+.boton:hover { 
+  background: var(--primario-oscuro); 
+}
+
+.boton.secundario { 
+  background: #fff; 
+  color: var(--primario); 
+  border: 1px solid #ddd; 
+}
+
+.boton.primario {
+  background-color: #656565;
+  color: white;
+}
+
+.boton.primario:hover {
+  background-color: var(--primario-oscuro);
+}
+
+.boton.pequeno { 
+  padding: 6px 10px; 
+  font-size: 12px; 
+}
+
+/* === TABLAS === */
+.contenedor-tabla { 
+  overflow-x: auto; 
+  -webkit-overflow-scrolling: touch;
+}
+
+.tabla-datos {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px var(--sombra);
+}
+
+.tabla-datos th, .tabla-datos td {
+  padding: 10px 10px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+}
+
+.tabla-datos th {
+  background-color: #f5f5f5;
+  color: #676767;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.tabla-datos tr:hover { 
+  background-color: #f9f9f9; 
+}
+
+/* === FORMULARIOS === */
+.tarjeta-formulario { 
+  max-width: 720px; 
+  margin: 18px auto;
+  padding: 26px;
+  background: #fff; 
+  border-radius: 10px; 
+  box-shadow: 0 2px 8px var(--sombra); 
+}
+
+.grupo-formulario { 
+  margin-bottom: 16px; 
+}
+
+.grupo-formulario label {
+  display: block;
+  font-weight: 700;
+  color: #676767;
+  margin-bottom: 7px;
+  font-size: 13px;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 10px 11px;
+  border: 2px solid #cccccc;
+  border-radius: 8px;
+  background-color: #fff;
+  font-size: 14px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+textarea {
+  min-height: 90px;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: var(--primario);
+  box-shadow: 0 0 0 3px rgba(198,40,40,0.08);
+}
+
+.alertas { 
+  color: var(--primario); 
+  font-weight: 600; 
+  text-align: center; 
+  margin-top: 8px; 
+  font-size: 13px;
+}
+
+/* === ESTADOS === */
+.estado { 
+  padding: 4px 8px; 
+  border-radius: 12px; 
+  font-size: 12px; 
+  font-weight: 700; 
+}
+
+.estado.en-progreso { 
+  background-color: #e3f2fd; 
+  color: #2196F3; 
+}
+
+.estado.revision { 
+  background-color: #fff3cd; 
+  color: #ff9800; 
+}
+
+.estado.atrasado { 
+  background-color: #f8d7da; 
+  color: #dc3545; 
+}
+
+/* === LOGIN === */
+body.pagina-login {
+  background-color: #ededed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  text-align: center;
+  padding: 0;
+}
+
+body.pagina-login #contenedor-barra-navegacion-superior {
+  display: none;
+}
+
+/* OJO: esta regla repetida se mantiene, solo compacté tamaños */
+.tarjeta-formulario {
+  text-align: center;
+  background-color: #fff;
+  width: 380px;
+  padding: 34px 26px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+}
+
+.seccion-logo { 
+  text-align: center; 
+  margin-bottom: 18px; 
+}
+
+.logo { 
+  max-width: 110px; 
+  height: auto; 
+}
+
+.seleccion-rol {
+  display: flex;
+  justify-content: space-around;
+  margin: 12px 0 18px 0;
+  gap: 10px;
+}
+
+.seleccion-rol label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #676767;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+/* Campos de formulario específicos para login */
+.tarjeta-formulario input[type="text"],
+.tarjeta-formulario input[type="password"],
+.tarjeta-formulario input[type="email"] {
+  width: 100%;
+  padding: 10px 11px;
+  margin: 7px 0;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: #fff;
+  font-size: 14px;
+  transition: border-color 0.3s;
+}
+
+.tarjeta-formulario input:focus {
+  outline: none;
+  border-color: var(--primario);
+  background-color: #fff;
+}
+
+/* === NOTIFICACIONES === */
+.contenedor-notificaciones {
+  max-height: 380px;
+  overflow-y: auto;
+}
+
+.lista-notificaciones {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.item-notificacion {
+  border-left: 4px solid var(--primario);
+  background-color: #f8faf8;
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  font-size: 14px;
+}
+
+.item-notificacion.solicitud_tutoria {
+  border-left-color: #2196F3;
+  background-color: #e3f2fd;
+}
+
+.item-notificacion.respuesta_tutoria {
+  border-left-color: #4CAF50;
+  background-color: #e8f5e8;
+}
+
+.item-notificacion.confirmacion_asistencia {
+  border-left-color: #FF9800;
+  background-color: #fff3e0;
+}
+
+.encabezado-notificacion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  gap: 10px;
+}
+
+.fecha-notificacion {
+  font-size: 12px;
+  color: #666;
+  white-space: nowrap;
+}
+
+.mensaje-notificacion {
+  color: #555;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.acciones-notificacion {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+/* === HISTORIAL DE ENTREGAS === */
+.historial-entregas { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 12px; 
+  max-height: 560px; 
+  overflow-y: auto; 
+}
+
+.item-historial-entrega {
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 12px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  font-size: 14px;
+}
+
+.item-historial-entrega.aprobada { 
+  border-left: 4px solid #4CAF50; 
+  background-color: #f8fff8; 
+}
+
+.item-historial-entrega.revision { 
+  border-left: 4px solid #ff9800; 
+  background-color: #fffdf0; 
+}
+
+.item-historial-entrega.correccion { 
+  border-left: 4px solid #dc3545; 
+  background-color: #fff5f5; 
+}
+
+.encabezado-entrega { 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  margin-bottom: 10px; 
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* === TUTORÍAS === */
+.lista-tutorias { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 12px; 
+}
+
+.item-tutoria {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  border: 1px solid #eee;
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.fecha-tutoria { 
+  text-align: center; 
+  min-width: 78px; 
+}
+
+.fecha-tutoria strong { 
+  font-size: 15px; 
+  color: #676767; 
+  display: block; 
+}
+
+.info-tutoria { 
+  flex: 1; 
+  padding: 0 12px; 
+  font-size: 14px;
+}
+
+.lugar-tutoria { 
+  color: #666; 
+  font-size: 13px; 
+}
+
+.acciones-tutoria { 
+  display: flex; 
+  gap: 8px; 
+  flex-wrap: wrap;
+}
+
+/* === SISTEMA DE TAREAS === */
+.lista-tareas {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.item-tarea {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 12px;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border-left: 4px solid #2196F3;
+  font-size: 14px;
+}
+
+.encabezado-tarea {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.descripcion-tarea {
+  margin: 10px 0;
+}
+
+.descripcion-tarea p {
+  margin: 5px 0;
+  color: #555;
+  font-size: 14px;
+}
+
+.acciones-tarea {
+  margin-top: 10px;
+}
+
+/* === TARJETAS DE RESUMEN === */
+.tarjeta-resumen {
+  text-align: center; 
+  padding: 16px; 
+}
+
+.numero-resumen { 
+  font-size: 2rem; 
+  font-weight: 800; 
+  color: #676767; 
+  margin: 8px 0; 
+}
+
+.etiqueta-resumen { 
+  color: #666; 
+  font-size: 13px; 
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  body {
+    padding-top: 98px; /* antes era 120/140, ahora más razonable */
+  }
+  
+  .barra-navegacion {
+    flex-direction: column;
+    padding: 0.5rem 0.8rem;
+    gap: 8px;
+    height: auto;
+    min-height: 86px;
+  }
+
+  .logo-barra-navegacion {
+    height: 34px;
+  }
+  
+  .menu-barra-navegacion {
+    flex-direction: column;
+    gap: 0.35rem;
+    width: 100%;
+  }
+  
+  .menu-barra-navegacion a {
+    text-align: center;
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+  
+  .boton-salir {
+    width: 100%;
+    text-align: center;
+    margin-top: 6px;
+  }
+  
+  main {
+    padding: 18px 14px;
+  }
+
+  .contenedor {
+    padding: 12px;
+  }
+  
+  .tarjeta {
+    padding: 16px;
+    margin-bottom: 14px;
+  }
+  
+  .tarjeta-formulario {
+    width: 92%;
+    padding: 24px 18px;
+  }
+  
+  .seleccion-rol {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .item-tutoria {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .acciones-tutoria {
+    align-self: stretch;
+    justify-content: flex-end;
+  }
+
+  /* Botones a 100% en móvil cuando hay muchos */
+  .acciones-notificacion .boton,
+  .acciones-tutoria .boton {
+    flex: 1;
+  }
+
+  /* Tablas: scroll suave */
+  .contenedor-tabla {
+    border-radius: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding-top: 108px;
+  }
+
+  html {
+    font-size: 14px;
+  }
+  
+  .tarjeta-formulario {
+    width: 95%;
+    padding: 18px 14px;
+  }
+  
+  .menu-barra-navegacion {
+    gap: 0.35rem;
+  }
+  
+  .menu-barra-navegacion a {
+    font-size: 13px;
+    padding: 8px 10px;
+  }
+
+  .boton {
+    padding: 9px 14px;
+    font-size: 13px;
+  }
+
+  .boton.pequeno {
+    font-size: 12px;
+  }
+  
+  main {
+    padding: 14px 10px;
+  }
+
+  .tarjeta {
+    padding: 14px;
+  }
+
+  .encabezado-notificacion {
+    align-items: flex-start;
+  }
+
+  .fecha-notificacion {
+    font-size: 11px;
+  }
+}
+
+/* === MEJORAS ESPECÍFICAS === */
+
+/* Estilos para formularios dentro de tarjetas */
+.tarjeta .grupo-formulario {
+  margin-bottom: 14px;
+}
+
+/* Mejora para los botones pequeños en acciones */
+.acciones-tutoria .boton.pequeno,
+.acciones-entrega .boton.pequeno,
+.acciones-notificacion .boton.pequeno {
+  padding: 6px 10px;
+  font-size: 12px;
+}
+
+/* Estilos para el texto de ayuda en formularios */
+small {
+  color: #666;
+  font-size: 12px;
+  display: block;
+  margin-top: 5px;
+}
+
+/* Estilos para los títulos */
+h1, h2, h3, h4 {
+  color: #EC3237;
+  margin-bottom: 12px;
+}
+
+h1 {
+  font-size: 1.55em;
+  color: var(--primario);
+}
+
+h2 {
+  font-size: 1.25em;
+  color: #444;
+}
+
+h3 {
+  font-size: 1.1em;
+  color: #555;
+}
+
+h4 {
+  font-size: 1.0em;
+  color: #555;
+}
+
+/* Espacio adicional para la primera tarjeta */
+main > .tarjeta:first-child {
+  margin-top: 0;
+}
+
+/* Estilos para Vue.js y nuevas funcionalidades */
+.resumen-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+}
+
+[v-cloak] {
+  display: none;
+}
+
+/* Animaciones para Vue */
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.3s;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+
+/* Mejoras para formularios con Vue */
+.formulario-vue .grupo-formulario {
+  margin-bottom: 14px;
+}
+
+.formulario-vue .alertas {
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.formulario-vue .alertas.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.formulario-vue .alertas.success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+/* Estilos para la carga */
+.cargando {
+  text-align: center;
+  padding: 18px;
+  color: #666;
+  font-size: 14px;
+}
+
+/* Botones de exportación/importación */
+.boton-accion {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 5px;
+}
+
+.boton-accion input[type="file"] {
+  position: absolute;
+  opacity: 0;
+  width: 0.1px;
+  height: 0.1px;
+}
+
+/* Tarjetas interactivas */
+.tarjeta.interactiva {
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+
+.tarjeta.interactiva:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+/* Listas con Vue */
+.lista-vue .item {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.2s;
+}
+
+.lista-vue .item:hover {
+  background-color: #f9f9f9;
+}
+
+.lista-vue .item:last-child {
+  border-bottom: none;
+}
