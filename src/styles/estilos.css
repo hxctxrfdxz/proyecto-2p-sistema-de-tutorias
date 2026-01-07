@@ -1173,3 +1173,40 @@ input, select, textarea {
     flex-basis: 100%;
   }
 }
+/* =========================================================
+   FIX selector de rol en móvil (Index / Login)
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .seleccion-rol {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .seleccion-rol label {
+    display: flex;
+    align-items: center;
+    gap: 8px;              /* 👈 distancia correcta entre círculo y texto */
+    font-size: 13px;
+    line-height: 1.2;
+    padding: 6px 8px;
+  }
+
+  .seleccion-rol input[type="radio"] {
+    margin: 0;             /* 👈 elimina el espacio feo */
+    transform: scale(1.05);/* un poco más visible en móvil */
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 420px) {
+  .seleccion-rol label {
+    gap: 6px;              /* aún más compacto */
+    font-size: 12.5px;
+  }
+
+  .seleccion-rol input[type="radio"] {
+    transform: scale(1);
+  }
+}
