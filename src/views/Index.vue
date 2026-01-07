@@ -31,12 +31,6 @@
           <p class="alertas" id="login-alerta">{{ alerta }}</p>
           <button class="boton primario" type="submit">Iniciar sesión</button>
         </form>
-
-        <p style="text-align:center;margin-top:20px">
-          ¿No tienes cuenta? <RouterLink to="/registro-usuario">Registrarse</RouterLink><br />
-          <small>Para registro de nuevos usuarios, contacte al administrador</small>
-        </p>
-
         <div style="margin-top:20px;padding:15px;background-color:#f8f9fa;border-radius:8px;">
           <h4>Credenciales de prueba:</h4>
           <small>
