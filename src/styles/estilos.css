@@ -837,3 +837,339 @@ main > .tarjeta:first-child {
 .lista-vue .item:last-child {
   border-bottom: none;
 }
+/* =========================================================
+   RESPONSIVE MEJORADO (solo ajustes estéticos)
+   Pegar AL FINAL del estilos.css
+   ========================================================= */
+
+/* Mejoras generales */
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+
+.contenedor-tabla {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Evita que tablas exploten en móvil */
+.contenedor-tabla table {
+  min-width: 650px;
+}
+
+/* Botones y formularios más uniformes */
+.boton {
+  max-width: 100%;
+  white-space: nowrap;
+}
+
+input, select, textarea {
+  max-width: 100%;
+}
+
+/* =========================================================
+   >= 1024px (desktop) – pequeño refinamiento
+   ========================================================= */
+@media (min-width: 1024px) {
+  main {
+    padding: 26px 22px;
+  }
+
+  .tarjeta {
+    padding: 22px;
+  }
+
+  .menu-barra-navegacion {
+    gap: 1rem;
+  }
+}
+
+/* =========================================================
+   768px - 1023px (tablet) – barra y grids más limpios
+   ========================================================= */
+@media (max-width: 1023px) and (min-width: 769px) {
+  body {
+    padding-top: 76px;
+  }
+
+  .barra-navegacion {
+    height: 64px;
+    padding: 0.45rem 0.9rem;
+  }
+
+  .menu-barra-navegacion a {
+    padding: 7px 10px;
+    font-size: 14px;
+  }
+
+  main {
+    padding: 20px 16px;
+  }
+
+  .tarjeta {
+    padding: 18px;
+  }
+
+  /* grids de tarjetas más cómodos */
+  .resumen-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+/* =========================================================
+   <= 768px (móvil/tablet pequeño)
+   ========================================================= */
+@media (max-width: 768px) {
+  body {
+    padding-top: 112px;
+  }
+
+  /* Barra: que se vea ordenada */
+  .barra-navegacion {
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 10px;
+    height: auto;
+    min-height: 102px;
+  }
+
+  .marca-barra-navegacion {
+    justify-content: center;
+  }
+
+  .menu-barra-navegacion {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .menu-barra-navegacion a {
+    padding: 8px 10px;
+    font-size: 13px;
+    border-radius: 8px;
+  }
+
+  .final-barra-navegacion {
+    width: 100%;
+  }
+
+  .boton-salir {
+    width: 100%;
+    text-align: center;
+    padding: 9px 12px;
+    font-size: 13px;
+  }
+
+  main {
+    padding: 16px 12px;
+  }
+
+  .contenedor {
+    padding: 10px;
+  }
+
+  .tarjeta {
+    padding: 14px;
+    border-radius: 12px;
+  }
+
+  /* Botones: se acomodan sin romper */
+  .tarjeta button.boton,
+  .tarjeta a.boton {
+    width: 100%;
+  }
+
+  /* Acciones: que no quede feo */
+  .acciones-notificacion,
+  .acciones-tutoria,
+  .acciones-tarea {
+    gap: 8px;
+  }
+
+  .acciones-notificacion .boton,
+  .acciones-tutoria .boton,
+  .acciones-tarea .boton {
+    flex: 1;
+    min-width: 140px;
+  }
+
+  /* Formularios: menos ancho fijo */
+  .tarjeta-formulario {
+    width: 94%;
+    padding: 18px 14px;
+  }
+
+  /* Cards internas en listas: más compactas */
+  .lista-notificaciones .tarjeta,
+  .lista-tutorias .tarjeta,
+  .historial-entregas .tarjeta {
+    padding: 12px;
+  }
+
+  /* Encabezados con separaciones */
+  h1 { font-size: 1.35em; }
+  h2 { font-size: 1.15em; }
+  h3 { font-size: 1.05em; }
+}
+
+/* =========================================================
+   <= 480px (móvil pequeño)
+   ========================================================= */
+@media (max-width: 480px) {
+  html {
+    font-size: 14px;
+  }
+
+  body {
+    padding-top: 122px;
+  }
+
+  .barra-navegacion {
+    padding: 10px 8px;
+    min-height: 110px;
+  }
+
+  .logo-barra-navegacion {
+    height: 32px;
+  }
+
+  .menu-barra-navegacion {
+    gap: 6px;
+  }
+
+  .menu-barra-navegacion a {
+    font-size: 12px;
+    padding: 7px 9px;
+  }
+
+  main {
+    padding: 14px 10px;
+  }
+
+  .tarjeta {
+    padding: 12px;
+  }
+
+  /* Botones más cómodos */
+  .boton {
+    font-size: 13px;
+    padding: 10px 14px;
+    width: 100%;
+  }
+
+  /* Inputs compactos */
+  input, select, textarea {
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  /* Notificaciones: fecha debajo si no cabe */
+  .encabezado-notificacion {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .fecha-notificacion {
+    font-size: 11px;
+  }
+
+  /* Evita que cards “internas” parezcan enormes */
+  .tarjeta .tarjeta {
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+}
+
+/* =========================================================
+   Extra: pantallas MUY pequeñas (<= 360px)
+   ========================================================= */
+@media (max-width: 360px) {
+  body {
+    padding-top: 130px;
+  }
+
+  .menu-barra-navegacion a {
+    width: 100%;
+    text-align: center;
+  }
+
+  .acciones-notificacion .boton,
+  .acciones-tutoria .boton,
+  .acciones-tarea .boton {
+    min-width: 100%;
+  }
+}
+/* =========================================================
+   BOTONES: responsive más estético (sin cambiar diseño)
+   Pegar AL FINAL
+   ========================================================= */
+
+/* Tamaño/tacto en móvil */
+@media (max-width: 768px) {
+  .boton {
+    padding: 10px 14px;
+    min-height: 40px;
+    line-height: 1.1;
+    font-size: 13px;
+    border-radius: 10px;
+  }
+
+  /* En acciones: mejor 2 columnas */
+  .acciones-notificacion,
+  .acciones-tutoria,
+  .acciones-tarea {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    align-items: stretch;
+  }
+
+  /* Evita que algún botón “empuje” */
+  .acciones-notificacion .boton,
+  .acciones-tutoria .boton,
+  .acciones-tarea .boton {
+    width: 100% !important;
+    white-space: normal;      /* permite 2 líneas si toca */
+    text-align: center;
+  }
+
+  /* Botón pequeño: que no se vea micro */
+  .boton.pequeno {
+    padding: 9px 12px;
+    font-size: 12.5px;
+    min-height: 38px;
+  }
+
+  /* En formularios: botones alineados bonito (CrearTarea tiene fila) */
+  form > div[style*="display:flex"] {
+    flex-wrap: wrap;
+    gap: 10px !important;
+  }
+
+  form > div[style*="display:flex"] .boton {
+    flex: 1 1 calc(50% - 10px);
+  }
+
+  /* Si hay 3 botones (crear/limpiar/borrador), el último ocupa toda la fila */
+  form > div[style*="display:flex"] .boton:last-child {
+    flex-basis: 100%;
+  }
+}
+
+/* Pantallas muy pequeñas: 1 columna */
+@media (max-width: 420px) {
+  .acciones-notificacion,
+  .acciones-tutoria,
+  .acciones-tarea {
+    grid-template-columns: 1fr;
+  }
+
+  form > div[style*="display:flex"] .boton {
+    flex-basis: 100%;
+  }
+}
